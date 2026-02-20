@@ -5,7 +5,7 @@ RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 RUN pip install --upgrade pip \
- && pip install PyYAML
+ && pip install --no-cache-dir PyYAML
 
 COPY feed.py /usr/bin/feed.py
-ENTRYPOINT ["python", "/usr/bin/feed.py"]
+ENTRYPOINT ["python3", "/usr/bin/feed.py"]
