@@ -6,7 +6,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 # install deps into venv (allowed)
 RUN pip install --no-cache-dir --upgrade pip \
- && pip install --no-cache-dir PyYAML
+ && RUN pip3 install --break-system-packages PyYAML
 
 COPY feed.py /usr/bin/feed.py
 ENTRYPOINT ["python", "/usr/bin/feed.py"]
