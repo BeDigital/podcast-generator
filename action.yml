@@ -1,4 +1,5 @@
-name: "Podcast Generator" author: "Ray Villalobos"
+name: "Podcast Generator" 
+author: "Ray Villalobos"
 description: "Generates a feed for a podcast from a YAML file" 
 runs:
   using: "docker"
@@ -9,10 +10,9 @@ branding:
 inputs:
   email:
     description: "Commiter's email"
-    required: "true"
+    required: true
     default: ${{github.actor}}@localhost
   name: 
     description: "Commiter's Name"
     required: true
     default: ${{github.actor}}  
-    
