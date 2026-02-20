@@ -8,4 +8,4 @@ RUN pip install --upgrade pip \
  && pip install --no-cache-dir PyYAML
 
 COPY feed.py /usr/bin/feed.py
-ENTRYPOINT ["python3", "/usr/bin/feed.py"]
+ENTRYPOINT [/entrypoint.sh]
