@@ -1,12 +1,11 @@
 FROM python:3.12-slim
 
 # create venv
-RUN python -m venv /opt/venv
+RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
-# install deps into venv (allowed)
-RUN pip install --no-cache-dir --upgrade pip \
- && RUN pip3 install --break-system-packages PyYAML
+RUN pip install --upgrade pip \
+ && pip install PyYAML
 
 COPY feed.py /usr/bin/feed.py
 ENTRYPOINT ["python", "/usr/bin/feed.py"]
